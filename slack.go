@@ -73,7 +73,7 @@ type AttachmentField struct {
 // See https://api.slack.com/docs/message-attachments for details.
 type AttachmentAction struct {
 	Name  string `json:"name,omitempty"`
-	Intergration IntergrationType `json:"integration"`
+	Intergration IntegrationType `json:"integration"`
 }
 
 type IntegrationType struct {
