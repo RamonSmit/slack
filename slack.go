@@ -72,10 +72,13 @@ type AttachmentField struct {
 // AttachmentAction represents an action in an attachment.
 // See https://api.slack.com/docs/message-attachments for details.
 type AttachmentAction struct {
-	Type  string `json:"type,omitempty"`
-	Text  string `json:"text,omitempty"`
-	URL   string `json:"url,omitempty"`
-	Style string `json:"style,omitempty"`
+	Name  string `json:"name,omitempty"`
+	Integration struct {
+		URL     string `json:"url"`
+		Context struct {
+			Action string `json:"action"`
+		} `json:"context"`
+	} `json:"integration"`
 }
 
 // Client provides a client for Slack Incoming Webhooks API.
